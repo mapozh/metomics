@@ -1,5 +1,71 @@
 # RNA-seq Metadata Application
 
+## 🌳 Branching Strategy
+
+We follow **Git branching best practices** to streamline collaboration and ensure code stability:
+
+### **1. Main Branch**
+- **`main`** → Stable, production-ready code.  
+- Only thoroughly tested and reviewed code is merged here.  
+
+### **2. Development Branch**
+- **`dev`** → For testing and integrating new features.  
+- Developers merge their feature branches into `dev` for integration testing.  
+
+### **3. Feature Branches**
+
+- Feature branches are created for each new feature or bug fix.  
+
+#### **Naming Convention:**
+
+- Use the following naming patterns:  
+  - `feature/<feature-name>`  
+  - `bugfix/<bug-description>`  
+
+#### **Examples:**
+
+- **Feature Branch:**  
+  `feature/forms`  
+
+- **Bug Fix Branch:**  
+  `bugfix/fix-api-error`
+
+---
+
+### **4. Workflow Example**
+
+#### **1. Create a Feature Branch**  
+```bash
+git checkout -b feature/forms
+
+#Commit Changes
+git add .
+git commit -m "Add metadata input form"
+
+# Merge into Dev
+git checkout dev
+git merge feature/forms
+
+# Test and Push Changes
+git push origin dev
+
+# Merge Dev into Main (after review)
+git checkout main
+git merge dev
+git push origin main
+```
+## 🚀 Branch Naming Guidelines
+
+- Use **lowercase letters** and **hyphens** for readability.  
+- Use **descriptive names** that indicate the task.  
+
+| **Branch Type**     | **Naming Convention**      | **Example**                     |
+|---------------------|----------------------------|---------------------------------|
+| **Feature**         | `feature/<feature-name>`   | `feature/user-authentication`   |
+| **Bug Fix**         | `bugfix/<bug-description>` | `bugfix/fix-login-error`        |
+| **Hotfix (urgent)** | `hotfix/<urgent-fix>`      | `hotfix/security-vulnerability` |
+| **Release**         | `release/<version-number>` | `release/v1.0.0`                |
+
 ## 1. What Works? 🚀
 
 ### ✅ **Backend**  
