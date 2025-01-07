@@ -66,6 +66,39 @@ git push origin main
 | **Hotfix (urgent)** | `hotfix/<urgent-fix>`      | `hotfix/security-vulnerability` |
 | **Release**         | `release/<version-number>` | `release/v1.0.0`                |
 
+
+
+## 🚀 For Frontend Developer
+
+### **1. Test Endpoints via Postman or Curl**
+
+#### **Add Sample:**
+```bash
+curl -X POST "http://localhost:8000/metadata/add-sample?sample_id=sample123&name=RNA+Sample&organism=Homo+sapiens&library_type=Paired-End"
+```
+#### **Add Sample:**
+```bash
+curl -X GET "http://localhost:8000/metadata/fetch-samples"
+```
+### **2. Update Frontend Services**
+
+- **Form Integration:**
+  - Connect forms to **`/metadata/add-sample`** for sample submission.
+
+- **Dynamic Data Rendering:**
+  - Populate tables or lists using data fetched from **`/metadata/fetch-samples`**.
+
+
+
+
+
+
+
+
+
+
+
+
 ## 1. What Works? 🚀
 
 ### ✅ **Backend**  

@@ -84,3 +84,4 @@ docker-compose.override.yml
 /frontend/public/*.gif
 /frontend/public/*.webp
 /frontend/public/*.map
+
