@@ -1,0 +1,841 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.ufz.de/ontologies/2025/mesyto#"
+     xml:base="http://www.ufz.de/ontologies/2025/mesyto"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.ufz.de/ontologies/2025/mesyto">
+        <rdfs:comment>Onto for omics experiments metadata</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#has -->
+
+    <owl:ObjectProperty rdf:about="http://www.ufz.de/ontologies/2025/mesyto#has"/>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#hasChemical -->
+
+    <owl:ObjectProperty rdf:about="http://www.ufz.de/ontologies/2025/mesyto#hasChemical">
+        <rdfs:subPropertyOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#has"/>
+        <rdfs:comment xml:lang="en">Links a Treatment to the Test item (chemical).</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#hasFormulationComposition -->
+
+    <owl:ObjectProperty rdf:about="http://www.ufz.de/ontologies/2025/mesyto#hasFormulationComposition">
+        <rdfs:subPropertyOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#has"/>
+        <rdfs:comment xml:lang="en">Links a Mixture to its associated Formulation_composition.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#hasProtocol -->
+
+    <owl:ObjectProperty rdf:about="http://www.ufz.de/ontologies/2025/mesyto#hasProtocol">
+        <owl:equivalentProperty rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#isTreatedBy"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#has"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#is"/>
+        <rdfs:comment xml:lang="en">Links an entity (Sample, Test system, or Treatment) to its Protocol.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#is -->
+
+    <owl:ObjectProperty rdf:about="http://www.ufz.de/ontologies/2025/mesyto#is"/>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#isAppliedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.ufz.de/ontologies/2025/mesyto#isAppliedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#is"/>
+        <rdfs:comment xml:lang="en">Links a Treatment to the Sample, Protocol, or other entities it applies to.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#isTreatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.ufz.de/ontologies/2025/mesyto#isTreatedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#has"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#is"/>
+        <rdfs:comment xml:lang="en">Links a Sample to the Treatment applied to it.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#isUsedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.ufz.de/ontologies/2025/mesyto#isUsedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#is"/>
+        <rdfs:comment xml:lang="en">Links a Test item (chemical) to the Treatment it is used in.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#CAS -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#CAS">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#Identifiers"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#IUPAC_name -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#IUPAC_name">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#Identifiers"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#Identifiers -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#Identifiers">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#Test_item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#SMILE -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#SMILE">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#Identifiers"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#Test_item -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#Test_item"/>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#Test_system -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#Test_system"/>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#additional_cell_state_information -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#additional_cell_state_information">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#state_of_the_cells_before_use"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#additional_compound_information -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#additional_compound_information">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#Identifiers"/>
+        <rdfs:comment>Additional information where available (e.g. InChi, Distributed Structure-Searchable Toxicity (DSSTox) substance identifier (DTXSID), etc.)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#additional_husbandry_information -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#additional_husbandry_information">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#housing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#additional_incubation_information -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#additional_incubation_information">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#incubation_characteristics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#additional_physicochemical_information -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#additional_physicochemical_information">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#physiochemical_properties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#additional_test_system_information -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#additional_test_system_information">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#general_characteristics_in_vitro"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#appearance -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#appearance">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#physiochemical_properties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#bedding_material -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#bedding_material">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#housing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#boiling_point -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#boiling_point">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#physiochemical_properties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#breeding_programm -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#breeding_programm">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#housing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#cage_type -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#cage_type">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#housing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#cell_confluency_recommended -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#cell_confluency_recommended">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#state_of_the_cells_before_use"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#cell_culture_conditions -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#cell_culture_conditions">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#in_vitro"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#cell_line -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#cell_line">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#general_characteristics_in_vitro"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#cell_morphology -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#cell_morphology">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#state_of_the_cells_before_use"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#cell_quality_control -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#cell_quality_control">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#state_of_the_cells_before_use"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#cell_type -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#cell_type">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#general_characteristics_in_vitro"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#cell_viability -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#cell_viability">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#state_of_the_cells_before_use"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#chemical_stability -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#chemical_stability">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#Test_item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#commercial_source -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#commercial_source">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#Test_item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#composition -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#composition">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#Test_item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#concentration -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#concentration">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#preparation_of_compound_or_composition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#culture_media -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#culture_media">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#cell_culture_conditions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#density -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#density">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#physiochemical_properties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#diet -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#diet">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#housing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#differentiation_stage -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#differentiation_stage">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#general_characteristics_in_vitro"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#dilutent_concentration -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#dilutent_concentration">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#preparation_of_compound_or_composition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#dissociation_constant -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#dissociation_constant">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#chemical_stability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#environmental_enrichment -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#environmental_enrichment">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#housing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#expiration_date -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#expiration_date">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#commercial_source"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#facility_type -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#facility_type">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#housing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#fat_solubility -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#fat_solubility">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#physiochemical_properties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#food_access -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#food_access">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#housing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#formulation_composition -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#formulation_composition">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#Test_item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#general_characterisics_in_vivo -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#general_characterisics_in_vivo">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#in_vivo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#general_characteristics_in_vitro -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#general_characteristics_in_vitro">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#in_vitro"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#growth_support_substrates -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#growth_support_substrates">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#cell_culture_conditions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#housing -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#housing">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#in_vivo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#impurities -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#impurities">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#preparation_of_compound_or_composition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#in_vitro -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#in_vitro">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#Test_system"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#in_vivo -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#in_vivo">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#Test_system"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#incubation_CO2_condition -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#incubation_CO2_condition">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#incubation_characteristics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#incubation_characteristics -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#incubation_characteristics">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#cell_culture_conditions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#incubation_humidity -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#incubation_humidity">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#incubation_characteristics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#incubation_temperature -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#incubation_temperature">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#incubation_characteristics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#light_dark_cycle -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#light_dark_cycle">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#housing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#lot_or_batch_number -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#lot_or_batch_number">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#commercial_source"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#manufacture_ID -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#manufacture_ID">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#commercial_source"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#melting_point -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#melting_point">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#physiochemical_properties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#metabolic_competence -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#metabolic_competence">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#general_characteristics_in_vitro"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#methods_for_fertilisation -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#methods_for_fertilisation">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#housing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#mixture -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#mixture">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#Test_item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#mixture_components -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#mixture_components">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#composition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#molecular_weight -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#molecular_weight">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#physiochemical_properties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#mycoplasma_contamination -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#mycoplasma_contamination">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#general_characteristics_in_vitro"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#number_of_cage_companions -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#number_of_cage_companions">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#housing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#pH -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#pH">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#physiochemical_properties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#particle_size -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#particle_size">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#physiochemical_properties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#partition_coefficient -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#partition_coefficient">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#physiochemical_properties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#passage_number -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#passage_number">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#general_characteristics_in_vitro"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#physiochemical_properties -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#physiochemical_properties">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#Test_item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#preparation_of_compound_or_composition -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#preparation_of_compound_or_composition">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#Test_item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#provider -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#provider">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#general_characteristics_in_vitro"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#purity -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#purity">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#commercial_source"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#relative_proportions_of_mixture_components -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#relative_proportions_of_mixture_components">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#composition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#salt_form -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#salt_form">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#commercial_source"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#sources_of_identifiers -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#sources_of_identifiers">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#Identifiers"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#stability_in_organic_solvents -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#stability_in_organic_solvents">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#chemical_stability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#state_of_the_cells_before_use -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#state_of_the_cells_before_use">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#cell_culture_conditions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#storage -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#storage">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#commercial_source"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#tank_shape -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#tank_shape">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#housing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#temperature -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#temperature">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#housing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#test_item_name -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#test_item_name">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#Test_item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#test_or_control -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#test_or_control">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#Test_item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#test_system_quality_criteria -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#test_system_quality_criteria">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#general_characteristics_in_vitro"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#thermal_stability -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#thermal_stability">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#chemical_stability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#tissue_type -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#tissue_type">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#general_characteristics_in_vitro"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#use_of_antibiotics -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#use_of_antibiotics">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#culture_media"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#use_of_feeder_cells -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#use_of_feeder_cells">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#growth_support_substrates"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#use_of_matrixes_or_scaffolds -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#use_of_matrixes_or_scaffolds">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#growth_support_substrates"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#use_of_serum -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#use_of_serum">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#culture_media"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#vapour_pressure -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#vapour_pressure">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#physiochemical_properties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#vendor -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#vendor">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#commercial_source"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#viscosity -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#viscosity">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#physiochemical_properties"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#water_quality -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#water_quality">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#housing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ufz.de/ontologies/2025/mesyto#water_solubility -->
+
+    <owl:Class rdf:about="http://www.ufz.de/ontologies/2025/mesyto#water_solubility">
+        <rdfs:subClassOf rdf:resource="http://www.ufz.de/ontologies/2025/mesyto#physiochemical_properties"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

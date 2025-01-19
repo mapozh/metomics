@@ -13,10 +13,12 @@ gitdb==4.0.12
 gitdb2==4.0.2
 GitPython==3.0.6
 h11==0.14.0
+html5rdf==1.2.1
 httpcore==1.0.7
 httptools==0.6.4
 httpx==0.28.1
 idna==3.10
+importlib_metadata==8.5.0
 isodate==0.7.2
 itsdangerous==2.2.0
 Jinja2==3.1.5
@@ -27,13 +29,17 @@ mdurl==0.1.2
 numpy==2.2.1
 openai==1.58.1
 orjson==3.10.13
+owlrl==7.1.2
+packaging==24.2
 pandas==2.2.3
+prettytable==3.12.0
 pydantic==2.10.4
 pydantic-extra-types==2.10.1
 pydantic-settings==2.7.1
 pydantic_core==2.27.2
 Pygments==2.19.1
 pyparsing==3.2.0
+pyshacl==0.29.1
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
 python-multipart==0.0.20
@@ -60,4 +66,6 @@ urllib3==2.3.0
 uvicorn==0.34.0
 uvloop==0.21.0
 watchfiles==1.0.3
+wcwidth==0.2.13
 websockets==14.1
+zipp==3.21.0

@@ -85,3 +85,5 @@ docker-compose.override.yml
 /frontend/public/*.webp
 /frontend/public/*.map
 
+# Protege file to update
+mesyto_onto.rdf

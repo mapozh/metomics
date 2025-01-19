@@ -164,7 +164,7 @@ curl -X GET "http://localhost:8000/metadata/fetch-samples"
 ### **1. Clone Repository:**
 ```bash
 git clone git@github.com:yourusername/metomics.git
-cd mesyto
+cd mesyto.owl
 ```
 
 ### **2. Backend Setup:**

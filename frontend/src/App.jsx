@@ -1,13 +1,14 @@
-import React from 'react';
-import AddSampleForm from './components/AddSampleForm';
+import React from "react";
+import DynamicForm from "./components/DynamicForm";
 
-function App() {
-  return (
-    <div>
-      <h1>RNA-seq Metadata Application</h1>
-      <AddSampleForm />
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <div>
+            <h1>Dynamic Form Generator</h1>
+            <DynamicForm />
+        </div>
+    );
+};
 
 export default App;
+

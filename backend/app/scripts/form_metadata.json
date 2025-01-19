@@ -1,0 +1,802 @@
+[
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#CAS",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#IUPAC_name",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#Identifiers",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#SMILE",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#Test_item",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#Test_system",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#additional_cell_state_information",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#additional_compound_information",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": "Additional information where available (e.g. InChi, Distributed Structure-Searchable Toxicity (DSSTox) substance identifier (DTXSID), etc.)"
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#additional_husbandry_information",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#additional_incubation_information",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#additional_physicochemical_information",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#additional_test_system_information",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#appearance",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#bedding_material",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#boiling_point",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#breeding_programm",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#cage_type",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#cell_confluency_recommended",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#cell_culture_conditions",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#cell_line",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#cell_morphology",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#cell_quality_control",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#cell_type",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#cell_viability",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#chemical_stability",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#commercial_source",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#composition",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#concentration",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#culture_media",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#density",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#diet",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#differentiation_stage",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#dilutent_concentration",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#dissociation_constant",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#environmental_enrichment",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#expiration_date",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#facility_type",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#fat_solubility",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#food_access",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#formulation_composition",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#general_characterisics_in_vivo",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#general_characteristics_in_vitro",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#growth_support_substrates",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#housing",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#impurities",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#in_vitro",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#in_vivo",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#incubation_CO2_condition",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#incubation_characteristics",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#incubation_humidity",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#incubation_temperature",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#light_dark_cycle",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#lot_or_batch_number",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#manufacture_ID",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#melting_point",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#metabolic_competence",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#methods_for_fertilisation",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#mixture",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#mixture_components",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#molecular_weight",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#mycoplasma_contamination",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#number_of_cage_companions",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#pH",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#particle_size",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#partition_coefficient",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#passage_number",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#physiochemical_properties",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#preparation_of_compound_or_composition",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#provider",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#purity",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#relative_proportions_of_mixture_components",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#salt_form",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#sources_of_identifiers",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#stability_in_organic_solvents",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#state_of_the_cells_before_use",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#storage",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#tank_shape",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#temperature",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#test_item_name",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#test_or_control",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#test_system_quality_criteria",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#thermal_stability",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#tissue_type",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#use_of_antibiotics",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#use_of_feeder_cells",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#use_of_matrixes_or_scaffolds",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#use_of_serum",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#vapour_pressure",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#vendor",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#viscosity",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#water_quality",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "Class",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#water_solubility",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "ObjectProperty",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#has",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "ObjectProperty",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#hasChemical",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": "Links a Treatment to the Test item (chemical)."
+    },
+    {
+        "type": "ObjectProperty",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#hasFormulationComposition",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": "Links a Mixture to its associated Formulation_composition."
+    },
+    {
+        "type": "ObjectProperty",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#hasProtocol",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": "Links an entity (Sample, Test system, or Treatment) to its Protocol."
+    },
+    {
+        "type": "ObjectProperty",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#is",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": null
+    },
+    {
+        "type": "ObjectProperty",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#isAppliedTo",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": "Links a Treatment to the Sample, Protocol, or other entities it applies to."
+    },
+    {
+        "type": "ObjectProperty",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#isTreatedBy",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": "Links a Sample to the Treatment applied to it."
+    },
+    {
+        "type": "ObjectProperty",
+        "name": "http://www.ufz.de/ontologies/2025/mesyto#isUsedIn",
+        "domain": null,
+        "range": null,
+        "label": null,
+        "comment": "Links a Test item (chemical) to the Treatment it is used in."
+    }
+]

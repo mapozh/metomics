@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import { addSample } from '../services/api';
+import formMetadata from '../data/form_metadata.json';
 
 const AddSampleForm = () => {
-  const [formData, setFormData] = useState({
-    sample_id: '',
-    name: '',
-    organism: '',
-    library_type: '',
-  });
-
+  const [formData, setFormData] = useState({});
   const [message, setMessage] = useState('');
+
+  // Load metadata for the "Sample" class
+  const sampleMetadata = formMetadata.Sample || { properties: [] };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,10 +16,10 @@ const AddSampleForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await addSample(formData); // API call
-      setMessage(response.message); // Success message
+      const response = await addSample(formData);
+      setMessage(response.message || 'Sample added successfully!');
     } catch (error) {
-      setMessage('Failed to add sample.'); // Error message
+      setMessage('Failed to add sample. Please try again.');
     }
   };
 
@@ -29,38 +27,21 @@ const AddSampleForm = () => {
     <div>
       <h2>Add Sample</h2>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="sample_id"
-          placeholder="Sample ID"
-          value={formData.sample_id}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="organism"
-          placeholder="Organism"
-          value={formData.organism}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="library_type"
-          placeholder="Library Type"
-          value={formData.library_type}
-          onChange={handleChange}
-          required
-        />
+        {sampleMetadata.properties.map((prop) => (
+          <div key={prop.name} style={{ marginBottom: '10px' }}>
+            <label>
+              {prop.label}:
+              <input
+                type={prop.type}
+                name={prop.name}
+                placeholder={prop.label}
+                value={formData[prop.name] || ''}
+                onChange={handleChange}
+                required
+              />
+            </label>
+          </div>
+        ))}
         <button type="submit">Add Sample</button>
       </form>
       {message && <p>{message}</p>}
@@ -69,3 +50,4 @@ const AddSampleForm = () => {
 };
 
 export default AddSampleForm;
+

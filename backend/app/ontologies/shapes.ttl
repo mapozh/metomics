@@ -1,0 +1,55 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix mesyto: <http://www.ufz.de/ontologies/2025/mesyto#> .
+
+# Shape for "Test_item"
+mesyto:TestItemShape a sh:NodeShape ;
+    sh:targetClass mesyto:Test_item ;
+    sh:property [
+        sh:path mesyto:hasFormulationComposition ;
+        sh:class mesyto:formulation_composition ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path mesyto:Identifiers ;
+        sh:class mesyto:Identifiers ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+    ] .
+
+# Shape for "Identifiers"
+mesyto:IdentifiersShape a sh:NodeShape ;
+    sh:targetClass mesyto:Identifiers ;
+    sh:property [
+        sh:path mesyto:CAS ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:path mesyto:IUPAC_name ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:path mesyto:SMILE ;
+        sh:nodeKind sh:IRI ;
+    ] .
+
+# Shape for "Protocol"
+mesyto:ProtocolShape a sh:NodeShape ;
+    sh:targetClass mesyto:Protocol ;
+    sh:property [
+        sh:path mesyto:Test_item ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path mesyto:Test_system ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:path mesyto:Treatment ;
+        sh:nodeKind sh:IRI ;
+    ] .
