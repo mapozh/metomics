@@ -2,15 +2,24 @@ import os
 import requests
 from rdflib import Graph, Namespace, Literal, RDF, URIRef
 from SPARQLWrapper import SPARQLWrapper, JSON
-from pyshacl import validate
+#from pyshacl import validate
+from dotenv import load_dotenv
+import json
 
 # GraphDB Configuration
-GRAPHDB_ENDPOINT = (
-    "http://localhost:7200/repositories/mesyto_repo/statements"
-)
+load_dotenv()
 
-# Updated Namespace
-MESYTO = Namespace("http://www.ufz.de/ontologies/2025/mesyto#")
+# GraphDB Configuration
+GRAPHDB_ENDPOINT = os.getenv("GRAPHDB_ENDPOINT")
+if not GRAPHDB_ENDPOINT:
+    raise ValueError("GRAPHDB_ENDPOINT environment variable is not set")
+
+# Namespace Configuration
+MESYTO_NAMESPACE = os.getenv("NAMESPACE_MESYTO")
+if not MESYTO_NAMESPACE:
+    raise ValueError("NAMESPACE_MESYTO environment variable is not set")
+
+MESYTO = Namespace(MESYTO_NAMESPACE)
 
 
 def create_rdf_sample(sample_id: str, name: str, organism: str, library_type: str) -> Graph:
@@ -20,13 +29,12 @@ def create_rdf_sample(sample_id: str, name: str, organism: str, library_type: st
     g = Graph()
     g.bind("mesyto.owl", MESYTO)
 
-    sample = URIRef(f"http://www.ufz.de/ontologies/2025/mesyto#Sample/{sample_id}")
+    sample = URIRef(f"{MESYTO_NAMESPACE}Sample/{sample_id}")
     g.add((sample, RDF.type, MESYTO.Sample))
     g.add((sample, MESYTO.name, Literal(name)))
     g.add((sample, MESYTO.organism, Literal(organism)))
     g.add((sample, MESYTO.library_type, Literal(library_type)))
     return g
-
 
 def save_rdf_to_graphdb(graph: Graph):
     """
@@ -38,10 +46,10 @@ def save_rdf_to_graphdb(graph: Graph):
     )
 
     query = f"""
-    PREFIX mesyto.owl: <http://www.ufz.de/ontologies/2025/mesyto#>
+    PREFIX mesyto.owl: <{MESYTO_NAMESPACE}>
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     INSERT DATA {{
-        GRAPH <http://www.ufz.de/ontologies/2025/mesyto> {{
+        GRAPH <{MESYTO_NAMESPACE}> {{
             {triples}
         }}
     }}
@@ -60,22 +68,21 @@ def save_rdf_to_graphdb(graph: Graph):
         print(f"Failed to save RDF data: {e}")
         print(f"Response: {response.text}")
 
-
 def fetch_rdf_from_graphdb():
     """
     Fetch data from GraphDB repository.
     """
-    query = """
-    PREFIX mesyto.owl: <http://www.ufz.de/ontologies/2025/mesyto#>
+    query = f"""
+    PREFIX mesyto.owl: <{MESYTO_NAMESPACE}>
     SELECT ?s ?p ?o
-    FROM <http://www.ufz.de/ontologies/2025/mesyto>
-    WHERE {
+    FROM <{MESYTO_NAMESPACE}>
+    WHERE {{
         ?s ?p ?o
-    }
+    }}
     LIMIT 10
     """
 
-    sparql = SPARQLWrapper("http://localhost:7200/repositories/mesyto_repo")
+    sparql = SPARQLWrapper(GRAPHDB_ENDPOINT.replace("/statements", ""))
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     sparql.addCustomHttpHeader("Content-Type", "application/sparql-query")
@@ -87,18 +94,21 @@ def fetch_rdf_from_graphdb():
     except Exception as e:
         print(f"Failed to fetch data: {str(e)}")
 
+import os
+from rdflib import Graph
 
 def load_rdf(file_name: str) -> Graph:
     """
     Load RDF/OWL file into an RDF graph.
     """
-    # Ensure the file path is absolute
+    # Construct the absolute path
     file_path = os.path.abspath(file_name)
-    g = Graph()
+    print(f"Resolved file path: {file_path}")  # Debug statement
 
+    g = Graph()
     try:
         g.parse(file_path, format="xml")
-        print(f"Successfully loaded OWL file: {file_name}")
+        print(f"Successfully loaded OWL file: {file_path}")
     except Exception as e:
         print(f"Failed to load OWL file: {e}")
         raise e
@@ -106,69 +116,73 @@ def load_rdf(file_name: str) -> Graph:
     return g
 
 
-
-import logging
-
-logger = logging.getLogger(__name__)
-
 def extract_form_metadata(graph: Graph):
     """
     Extract classes, subclasses, and properties from the OWL ontology.
     """
-    query = """
+    query = f"""
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
     PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-    PREFIX mesyto: <http://www.ufz.de/ontologies/2025/mesyto#>
+    PREFIX mesyto: <{MESYTO_NAMESPACE}>
 
     SELECT ?type ?entity ?domain ?range ?label ?comment ?superclass
-    WHERE {
-        {
+    WHERE {{
+        {{
             ?entity a owl:Class .
             BIND("Class" AS ?type)
-            OPTIONAL { ?entity rdfs:label ?label . }
-            OPTIONAL { ?entity rdfs:comment ?comment . }
-            OPTIONAL { ?entity rdfs:subClassOf ?superclass . }
-        }
+            OPTIONAL {{ ?entity rdfs:label ?label . }}
+            OPTIONAL {{ ?entity rdfs:comment ?comment . }}
+            OPTIONAL {{ ?entity rdfs:subClassOf ?superclass . }}
+        }}
+    }}
+    """.strip()  # Ensures no trailing whitespace
 
-    }
-    """
-    logger.info("Executing SPARQL query...")
+    # Debugging statements for query verification
+    print("==== DEBUG: SPARQL Query Length ====")
+    print(f"Query Length: {len(query)}")
+    print("==== DEBUG: SPARQL Query ====")
+    print(query)
+    print("===================================")
+
     try:
         query_results = graph.query(query)
+        print("==== DEBUG: Raw Query Results ====")
+        print(query_results)
+        print("==================================")
+
+        results = []
+        for row in query_results:
+            print(f"==== DEBUG: Processing Row ====\nRow: {row}")
+            results.append({
+                "type": str(row.type),
+                "name": str(row.entity),
+                "domain": str(row.domain) if row.domain else None,
+                "range": str(row.range) if row.range else None,
+                "label": str(row.label) if row.label else None,
+                "comment": str(row.comment) if row.comment else None,
+                "superclass": str(row.superclass) if row.superclass else None,
+            })
+
+        print("==== DEBUG: Processed Results ====")
+        print(results)
+        print("==================================")
+
+        return results
     except Exception as e:
-        logger.error(f"Error during SPARQL query execution: {e}")
+        print("==== ERROR: During SPARQL Query Execution ====")
+        print(f"Error: {e}")
+        print("=============================================")
         raise
 
-    logger.info("Query executed successfully, processing results...")
-    results = []
-    for row in query_results:
-        logger.debug(f"Processing row: {row}")
-        results.append({
-            "type": str(row.type),
-            "name": str(row.entity),
-            "domain": str(row.domain) if row.domain else None,
-            "range": str(row.range) if row.range else None,
-            "label": str(row.label) if row.label else None,
-            "comment": str(row.comment) if row.comment else None,
-            "superclass": str(row.superclass) if row.superclass else None,
-        })
-
-    logger.info("Metadata extraction completed successfully.")
-    return results
-
-
-
-
-
-import json
 
 if __name__ == "__main__":
-    graph = load_rdf("mesyto.owl")
-    metadata = extract_form_metadata(graph)
-    with open("form_metadata.json", "w") as f:
-        json.dump(metadata, f, indent=4)
-    print("Metadata saved to form_metadata.json.")
+    graph = load_rdf("app/ontologies/mesyto.owl")
+    print(f"Number of triples in graph: {len(graph)}")
+
+    # Print all triples for debugging
+    for s, p, o in graph:
+        print(f"Triple: {s} {p} {o}")
 
 
 

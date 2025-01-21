@@ -1,5 +1,4 @@
 import os
-import json
 import logging
 from fastapi import APIRouter, HTTPException
 from app.rdf_utils import (
