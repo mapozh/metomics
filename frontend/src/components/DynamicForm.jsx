@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import '../styles.css';
 
 const DynamicForm = () => {
     const [formMetadata, setFormMetadata] = useState([]);
@@ -49,14 +50,15 @@ const DynamicForm = () => {
     // Render form recursively
     const renderForm = (items) => {
         return items.map((item) => (
-            <div key={item.name} style={{ marginLeft: "20px", marginBottom: "10px" }}>
-                <label>{item.label || item.name.split("#").pop()}</label>
-                <br />
+            <div key={item.name} className="inputGroup">
+                <label className="label">
+                    {item.label || item.name.split("#").pop()}
+                </label>
                 <input
                     type="text"
                     name={item.name}
                     placeholder={item.comment || `Enter ${item.label || item.name.split("#").pop()}`}
-                    style={{ width: "300px" }}
+                    className="input"
                 />
                 {item.children && renderForm(item.children)}
             </div>
@@ -64,19 +66,19 @@ const DynamicForm = () => {
     };
 
     if (loading) {
-        return <div>Loading form...</div>;
+        return <div className="loadingText">Loading form...</div>;
     }
 
     if (error) {
-        return <div>Error: {error}</div>;
+        return <div className="errorText">Error: {error}</div>;
     }
 
     return (
-        <div>
-            <h1>Dynamic Form Generator</h1>
-            <form>
+        <div className="container">
+            <h1 className="heading">Dynamic Form Generator</h1>
+            <form className="form">
                 {renderForm(formMetadata)}
-                <button type="submit" style={{ marginTop: "20px" }}>Submit</button>
+                <button type="submit" className="button">Submit</button>
             </form>
         </div>
     );

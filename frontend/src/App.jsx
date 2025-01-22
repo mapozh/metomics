@@ -7,7 +7,7 @@ const App = () => {
     return (
         <Router>
             <div>
-                <h1>RNA-seq Metadata Management</h1>
+                {/* <h1>RNA-seq Metadata Management</h1> */}
                 <Routes>
                     <Route path="/" element={<DynamicForm />} />
                     <Route path="/chatbot" element={<Chatbot />} />
