@@ -11,13 +11,14 @@ html, body {
   font-family: 'Arial', sans-serif;
   background: linear-gradient(180deg, #9cc4aa 0%, #4c986d 100%); /* Green gradient background */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  /* justify-content: center;
+  align-items: center; */
+  /* min-height: 100vh; */
   flex-direction: column;
   padding: 0; /* Remove padding to fill the entire screen */
   margin: 0; /* Remove margin to ensure full-page coverage */
   color: #333; /* Dark text for contrast */
+  margin-top: 8500px;
 }
 
 /* Heading style */
@@ -28,6 +29,7 @@ html, body {
   text-align: center;
   font-weight: bold;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for the heading */
+  z-index: 10; /* Ensure it's above other elements if overlapping */
 }
 
 /* Form styling */
@@ -73,6 +75,27 @@ html, body {
   box-shadow: 0 0 8px rgba(255, 112, 67, 0.5); /* Orange glow effect */
 }
 
+/* Log Out button styling */
+.logout-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #007bff; /* Blue color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.logout-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+
 /* Button styling */
 .button {
   background-color: #ff7043;
@@ -100,6 +123,7 @@ html, body {
   text-align: center;
   margin-top: 30px;
 }
+
 
 /* Error text styling */
 .errorText {

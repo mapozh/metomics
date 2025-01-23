@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import '../styles.css';
 
 const DynamicForm = () => {
     const [formMetadata, setFormMetadata] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const navigate = useNavigate(); // Initialize useNavigate for navigation
+
+    // Log out function to navigate to the login page
+    const handleLogout = () => {
+        navigate("/login"); // Redirect to the login page
+    };
 
     // Build hierarchy from metadata
     const buildHierarchy = (metadata) => {
@@ -76,6 +83,7 @@ const DynamicForm = () => {
     return (
         <div className="container">
             <h1 className="heading">Dynamic Form Generator</h1>
+            <button className="logout-button" onClick={handleLogout}>Log Out</button>
             <form className="form">
                 {renderForm(formMetadata)}
                 <button type="submit" className="button">Submit</button>
