@@ -1,23 +1,32 @@
 import os
-import openai
+import logging
 from fastapi import APIRouter, HTTPException, Request
 from dotenv import load_dotenv
-import requests
+from openai import OpenAI
 
 # Load environment variables
 load_dotenv()
 
-# Configuration
-openai.api_key = os.getenv("OPENAI_API_KEY")
-SPARQL_ENDPOINT = os.getenv("GRAPHDB_ENDPOINT")
+# Load OpenAI API key
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-# Create router
+if not OPENAI_API_KEY:
+    raise ValueError("OPENAI_API_KEY is not set in environment variables.")
+
+# Instantiate OpenAI client
+client = OpenAI(api_key=OPENAI_API_KEY)
+
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)
+
+# Create FastAPI router
 router = APIRouter(prefix="/chatbot", tags=["chatbot"])
+
 
 @router.post("/query")
 async def chatbot_query(request: Request):
     """
-    Accept user queries in natural language, generate SPARQL, and return results.
+    Accept user queries in natural language and return a general response.
     """
     data = await request.json()
     user_query = data.get("query", "")
@@ -26,58 +35,19 @@ async def chatbot_query(request: Request):
         raise HTTPException(status_code=400, detail="Query is required.")
 
     try:
-        # Generate SPARQL query using OpenAI GPT
-        prompt = f"Generate a SPARQL query for the following natural language question: {user_query}"
-        response = openai.Completion.create(
-            engine="text-davinci-003",
-            prompt=prompt,
-            max_tokens=300,
+        # Generate a general response using OpenAI API
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",  # Ensure this is the correct model
+            messages=[{"role": "user", "content": user_query}],
+            temperature=0.7,
         )
-        sparql_query = response["choices"][0]["text"].strip()
 
-        # Execute SPARQL query on GraphDB
-        headers = {"Accept": "application/json"}
-        query_response = requests.post(SPARQL_ENDPOINT.replace("/statements", ""), data={"query": sparql_query}, headers=headers)
+        # Get the assistant's response
+        general_response = response.choices[0].message.content.strip()
 
-        if query_response.status_code != 200:
-            raise HTTPException(status_code=500, detail="SPARQL query failed.")
-
-        results = query_response.json()
-
-        # Return SPARQL results
-        return {"sparql_query": sparql_query, "results": results.get("results", {}).get("bindings", [])}
+        return {"response": general_response}
 
     except Exception as e:
+        logging.exception("Error during chatbot query.")
         raise HTTPException(status_code=500, detail=str(e))
 
-
-@router.post("/insert")
-async def insert_data(request: Request):
-    """
-    Insert missing data into the RDF store using SPARQL INSERT.
-    """
-    data = await request.json()
-    if not data:
-        raise HTTPException(status_code=400, detail="Data is required.")
-
-    try:
-        # Construct SPARQL INSERT query
-        triples = "\n".join(
-            [f'<{k}> <http://www.w3.org/2000/01/rdf-schema#{v["predicate"]}> "{v["value"]}" .' for k, v in
-             data.items()])
-        sparql_insert = f"""
-        INSERT DATA {{
-            {triples}
-        }}
-        """
-
-        headers = {"Content-Type": "application/sparql-update"}
-        response = requests.post(SPARQL_ENDPOINT, data=sparql_insert, headers=headers)
-
-        if response.status_code != 204:  # 204 is the success status code for SPARQL updates
-            raise HTTPException(status_code=500, detail="SPARQL INSERT failed.")
-
-        return {"message": "Data inserted successfully."}
-
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))

@@ -2,13 +2,13 @@ import React, { useState } from "react";
 
 const Chatbot = () => {
     const [userQuery, setUserQuery] = useState("");
-    const [chatResponse, setChatResponse] = useState("");
+    const [chatResponse, setChatResponse] = useState(null);
     const [loading, setLoading] = useState(false);
 
     const handleQuerySubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        setChatResponse("");
+        setChatResponse(null);
 
         try {
             const response = await fetch("http://127.0.0.1:8000/chatbot/query", {
@@ -20,13 +20,20 @@ const Chatbot = () => {
             });
 
             if (!response.ok) {
-                throw new Error("Failed to fetch chatbot response");
+                const errorData = await response.json();
+                throw new Error(errorData.detail || "Failed to fetch chatbot response.");
             }
 
             const data = await response.json();
-            setChatResponse(data.results || "No results found.");
+
+            // Ensure the response is properly set
+            if (data.response) {
+                setChatResponse(data.response);
+            } else {
+                setChatResponse("No response received from chatbot.");
+            }
         } catch (error) {
-            setChatResponse("Error: " + error.message);
+            setChatResponse(`Error: ${error.message}`);
         } finally {
             setLoading(false);
         }
@@ -41,14 +48,19 @@ const Chatbot = () => {
                     value={userQuery}
                     onChange={(e) => setUserQuery(e.target.value)}
                     placeholder="Ask a question about your RDF data..."
+                    disabled={loading}
                 />
-                <button type="submit" disabled={loading}>
+                <button type="submit" disabled={loading || !userQuery.trim()}>
                     {loading ? "Loading..." : "Ask"}
                 </button>
             </form>
             <div>
                 <h3>Response:</h3>
-                <pre>{typeof chatResponse === "string" ? chatResponse : JSON.stringify(chatResponse, null, 2)}</pre>
+                {chatResponse ? (
+                    <pre>{chatResponse}</pre>
+                ) : (
+                    <p>{loading ? "Waiting for response..." : "No response yet."}</p>
+                )}
             </div>
         </div>
     );

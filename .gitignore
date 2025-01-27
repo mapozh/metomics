@@ -87,3 +87,5 @@ docker-compose.override.yml
 
 # Protege file to update
 mesyto_onto.rdf
+
+graphdb-docker/

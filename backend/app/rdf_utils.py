@@ -2,9 +2,8 @@ import os
 import requests
 from rdflib import Graph, Namespace, Literal, RDF, URIRef
 from SPARQLWrapper import SPARQLWrapper, JSON
-#from pyshacl import validate
 from dotenv import load_dotenv
-import json
+
 
 # GraphDB Configuration
 load_dotenv()
@@ -20,21 +19,6 @@ if not MESYTO_NAMESPACE:
     raise ValueError("NAMESPACE_MESYTO environment variable is not set")
 
 MESYTO = Namespace(MESYTO_NAMESPACE)
-
-
-def create_rdf_sample(sample_id: str, name: str, organism: str, library_type: str) -> Graph:
-    """
-    Create RDF data for a sample.
-    """
-    g = Graph()
-    g.bind("mesyto.owl", MESYTO)
-
-    sample = URIRef(f"{MESYTO_NAMESPACE}Sample/{sample_id}")
-    g.add((sample, RDF.type, MESYTO.Sample))
-    g.add((sample, MESYTO.name, Literal(name)))
-    g.add((sample, MESYTO.organism, Literal(organism)))
-    g.add((sample, MESYTO.library_type, Literal(library_type)))
-    return g
 
 def save_rdf_to_graphdb(graph: Graph):
     """
@@ -94,8 +78,6 @@ def fetch_rdf_from_graphdb():
     except Exception as e:
         print(f"Failed to fetch data: {str(e)}")
 
-import os
-from rdflib import Graph
 
 def load_rdf(file_name: str) -> Graph:
     """

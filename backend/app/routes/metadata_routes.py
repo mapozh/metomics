@@ -2,7 +2,7 @@ import os
 import logging
 from fastapi import APIRouter, HTTPException
 from app.rdf_utils import (
-    create_rdf_sample,
+    #create_rdf_sample,
     save_rdf_to_graphdb,
     fetch_rdf_from_graphdb,
     load_rdf,
