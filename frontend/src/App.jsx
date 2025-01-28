@@ -1,23 +1,52 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState } from "react"; // Import useState
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"; // Import Navigate
+import HomePage from "./components/HomePage";
+import Register from "./components/Register";
+import Signin from "./components/Signin";
 import DynamicForm from "./components/DynamicForm";
 import Chatbot from "./components/Chatbot";
-import LoginPage from "./components/LoginPage";
+import Header from "./components/Header"; 
+// import CreateProject from "./components/CreateProject"; 
 
 const App = () => {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [user, setUser] = useState(null);
+
+    const handleSignIn = (userData) => {
+        setIsAuthenticated(true);
+        setUser(userData);
+    };
+
+    const handleLogout = () => {
+        setIsAuthenticated(false);
+        setUser(null);
+    };
+
+
     return (
-        <Router>
-            <div>
-                {/* <h1>RNA-seq Metadata Management</h1> */}
-                <Routes>
-                    <Route path="/" element={<DynamicForm />} />
-                    <Route path="/chatbot" element={<Chatbot />} />
-                    <Route path="/login" element={<LoginPage />} />
-                </Routes>
+            <div style={{ flex: 1 }}>
+                {/* {isAuthenticated ? (
+                    <Header handleLogout={handleLogout} /> // Pass handleLogout to Header2
+                ) : (
+                    <Header />
+                )} */}
+                
+                    <Routes>
+                        <Route path="/register" element={<Register />} />
+                        <Route path="/signin" element={<Signin />} />
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/dynamicform" element={<DynamicForm />} />
+                        <Route path="/chatbot" element={<Chatbot />} />
+                        <Route
+                            path="/create-project"
+                            element={isAuthenticated ? <CreateProject /> : <Navigate to="/signin" />}
+                        />
+                    </Routes>
             </div>
-        </Router>
     );
 };
 
+
 export default App;
+
 

@@ -1,0 +1,88 @@
+/* General styling for the Init page */
+.init-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  /* Styling for the projects list (left-hand side) */
+  .projects-list {
+    width: 45%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .projects-list h3 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .projects-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .projects-list li {
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .refresh-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #56b47f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .refresh-button:hover {
+    background-color: #4a9c66;
+  }
+  
+  /* Styling for the create project section (right-hand side) */
+  .create-project {
+    width: 45%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .create-project h3 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .create-project input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+  
+  .create-button {
+    padding: 12px 30px;
+    background-color: #ff7043; /* Orange button */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .create-button:hover {
+    background-color: #e64a19; /* Darker orange on hover */
+  }
+  

@@ -6,30 +6,67 @@ html, body {
   width: 100%; /* Ensure body takes the full width */
 }
 
-/* Container styling */
-.container {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(180deg, #9cc4aa 0%, #4c986d 100%); /* Green gradient background */
+/* General page container with sidebar and form */
+.form-page-container {
   display: flex;
-  /* justify-content: center;
-  align-items: center; */
-  /* min-height: 100vh; */
+  height: 100vh; /* Full height of the viewport */
+  background: linear-gradient(180deg, #9cc4aa 0%, #4c986d 100%); /* Green gradient background */
+}
+
+/* Sidebar Styling */
+.sidebar {
+  position: fixed; /* Fixed position to the left of the page */
+  top: 0;
+  left: 0;
+  width: 200px; /* Width of the sidebar */
+  background-color: #2c333b; /* Dark background for the sidebar */
+  color: white;
+  display: flex;
   flex-direction: column;
-  padding: 0; /* Remove padding to fill the entire screen */
-  margin: 0; /* Remove margin to ensure full-page coverage */
-  color: #333; /* Dark text for contrast */
-  margin-top: 8500px;
+  justify-content: flex-start; /* Align buttons from the top */
+  padding: 20px;
+  height: 100vh; /* Ensure it takes up the full height */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Slight shadow for the sidebar */
+}
+
+.home-button, .logout-button {
+  background-color: #349fb9; /* Green background */
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.home-button:hover, .logout-button:hover {
+  background-color: #4a9c66; /* Darker green on hover */
+}
+
+/* Form Container (Right-hand side) */
+.form-container {
+  padding: 30px;
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
 }
 
 /* Heading style */
 .heading {
-  color: #ffffff; /* White color for better contrast */
-  font-size: 40px; /* Larger heading size */
-  margin-bottom: 40px;
+  color: #333;
+  font-size: 36px;
   text-align: center;
+  margin-bottom: 30px;
   font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for the heading */
-  z-index: 10; /* Ensure it's above other elements if overlapping */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Form styling */
@@ -37,15 +74,19 @@ html, body {
   background-color: #ffffff;
   padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Larger shadow for a modern effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 650px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   transition: all 0.3s ease;
 }
 
 /* Input group (label + input) styling */
 .inputGroup {
-  margin-bottom: 20px; /* Increased margin for more breathing space */
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -64,9 +105,9 @@ html, body {
   padding: 12px;
   font-size: 18px;
   border: 2px solid #ddd;
-  border-radius: 8px; /* Larger border radius for a softer look */
+  border-radius: 8px;
   outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for border */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Input focus state */
@@ -74,27 +115,6 @@ html, body {
   border-color: #ff7043; /* Orange border on focus */
   box-shadow: 0 0 8px rgba(255, 112, 67, 0.5); /* Orange glow effect */
 }
-
-/* Log Out button styling */
-.logout-button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: #007bff; /* Blue color */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  z-index: 10;
-}
-
-.logout-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-}
-
 
 /* Button styling */
 .button {
@@ -106,7 +126,7 @@ html, body {
   border-radius: 8px;
   cursor: pointer;
   width: 100%;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Added smooth transform */
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 /* Button hover effect */
@@ -124,7 +144,6 @@ html, body {
   margin-top: 30px;
 }
 
-
 /* Error text styling */
 .errorText {
   font-size: 20px;
@@ -134,15 +153,7 @@ html, body {
   margin-top: 30px;
 }
 
-/* Form input container hover effect (removed the expansion on hover) */
-.inputGroup:hover {
-  transform: none; /* Ensure no scaling or zooming on hover */
-}
-
 /* Spacing adjustments for better presentation */
 form {
   padding: 0 20px;
 }
-
-  
-  
