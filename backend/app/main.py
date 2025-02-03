@@ -18,7 +18,7 @@ logging.basicConfig(level=logging.DEBUG)  # Configure logging
 # Load environment variables from .env file
 load_dotenv()
 
-SQLALCHEMY_DATABASE_URL = "postgresql://postgres:RiscaniM@localhost/postgre"
+SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
 if not SQLALCHEMY_DATABASE_URL:
     raise ValueError("DATABASE_URL environment variable not set")
 print(f"Database URL: {SQLALCHEMY_DATABASE_URL}") 
